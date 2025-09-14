@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nutro Heist</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.0.2/dist/tesseract.min.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <img src="https://img.icons8.com/color/96/000000/avocado.png" alt="Nutro Heist Logo" class="logo" />
+      <h1>Nutro Heist</h1>
+    </div>
+    <nav>
+      <button class="nav-btn" data-link="#hero">Home</button>
+      <button class="nav-btn" data-link="#how">How It Works</button>
+      <button class="nav-btn" data-link="#contact">Contact</button>
+      <button class="nav-btn aboutus-btn ripple" id="aboutNav">About Us</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home / Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-content">
+        <h2 class="animated fadein-up">Smart Food Scanning</h2>
+        <p class="hero-desc animated fadein-delay">
+          Scan packaged food ingredients instantly, see clear nutrition scores, and make better dietary choices in style.
+        </p>
+        <button class="cta-btn ripple animated fadein-up" onclick="document.getElementById('scanner').scrollIntoView({behavior:'smooth'})">
+          <span>Start Scanning</span>
+        </button>
+      </div>
+      <div class="hero-graphic animated fadein-delay">
+        <img src="https://img.icons8.com/color/240/food-bar.png" alt="Food scan illustration" />
+      </div>
+    </section>
+
+    <!-- Scanner Section -->
+    <section id="scanner" class="scanner-section card-bg animated-section">
+      <div class="scanner-header">
+        <h2>Scan Your Food</h2>
+        <span class="section-desc">Use camera or upload a label. Experience animated analysis!</span>
+      </div>
+      <video id="camera" autoplay playsinline></video>
+      <div class="scanner-btns">
+        <button class="action-btn ripple" onclick="startCamera()">Start Camera</button>
+        <button class="action-btn ripple" onclick="scanFromCamera()">Scan Snapshot</button>
+        <input type="file" accept="image/*" id="imageInput" style="display:none;" />
+        <button class="action-btn ripple" onclick="document.getElementById('imageInput').click();">Upload Image</button>
+        <button class="action-btn ripple" onclick="scanImage()">Scan from File</button>
+      </div>
+      <div id="scanner-loader" class="loader" style="display:none;">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+      <div id="ocrCardContainer"></div>
+      <div id="meterContainer" class="meter-container" style="display:none;">
+        <svg class="meter-svg" width="190" height="190">
+          <circle class="meter-bg" cx="95" cy="95" r="85" />
+          <circle class="meter-bar" id="meterArc" cx="95" cy="95" r="85" />
+        </svg>
+        <div class="meter-labels">
+          <span class="health-label" id="healthLabel"></span>
+          <span class="meter-value" id="meterValue">0</span>
+          <span class="score-label">/100</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how" class="info-section card-bg animated-section">
+      <h2>How It Works</h2>
+      <ol class="how-list">
+        <li class="how-step animated fadein-up"><strong></strong> Start your camera or upload a food label image.</li>
+        <li class="how-step animated fadein-up" style="animation-delay: 0.25s;"><strong></strong> AI scans and extracts ingredients instantly.</li>
+        <li class="how-step animated fadein-up" style="animation-delay: 0.5s;"><strong></strong> Animated health score meter gives you clear feedback.</li>
+      </ol>
+    </section>
+  </main>
+
+  <!-- Contact Section -->
+  <section id="contact" class="info-section card-bg animated-section">
+    <h2>Contact Us</h2>
+    <div class="contact-cards">
+      <a href="https://instagram.com/nutroheist" target="_blank" class="contact-card animated fadein-up"
+        ><img src="https://img.icons8.com/fluency/48/instagram-new.png" /><span>@nutroheist</span></a
+      >
+      <a href="mailto:nutroheist@gmail.com" class="contact-card animated fadein-up" style="animation-delay: 0.15s;"
+        ><img src="https://img.icons8.com/fluency/48/secured-letter.png" /><span>Email</span></a
+      >
+      <div class="contact-card animated fadein-up" style="animation-delay: 0.3s;">
+        <img src="https://img.icons8.com/color/48/phone.png" /><span>+91-9876543210</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2025 Nutro Heist</span>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
