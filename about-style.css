@@ -1,0 +1,165 @@
+:root {
+    --primary: #44c796;
+    --primary-dark: #248a5a;
+    --accent: #fd8e5e;
+    --bg: #f7fafc;
+    --surface: #fff;
+    --header-gradient: linear-gradient(120deg, #e4ffe8 60%, #f8e7de 100%);
+  }
+  
+  body {
+    font-family: 'Segoe UI', 'Poppins', Arial, sans-serif;
+    background: var(--bg);
+    margin: 0;
+  }
+  
+  .about-header {
+    background: var(--header-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.2em 0 1em 0;
+    box-shadow: 0 3px 20px #44c79613;
+  }
+  
+  .about-brand {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  
+  .logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--bg);
+    box-shadow: 0 0 0 6px var(--bg);
+  }
+  
+  h1 {
+    font-size: 2.3rem;
+    color: var(--primary-dark);
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 70vh;
+  }
+  
+  .about-card {
+    background: var(--surface);
+    border-radius: 2em;
+    box-shadow: 0 6px 36px #44c79619;
+    margin: 3vh auto 0 auto;
+    padding: 2.6em 2.3em;
+    max-width: 620px;
+    width: 93vw;
+    animation: fadeinup 1.15s cubic-bezier(.16,.65,.23,1.12) both;
+  }
+  
+  @keyframes fadeinup {
+    from { opacity: 0; transform: translateY(45px) scale(.94);}
+    to { opacity: 1; transform: none;}
+  }
+  
+  .about-card h2 {
+    color: var(--primary);
+    font-size: 1.4em;
+    margin-top: 1.5em;
+    margin-bottom: 0.25em;
+  }
+  .about-card h2:first-of-type { margin-top: 0.2em; }
+  
+  .about-card p {
+    color: #353535;
+    font-size: 1.07em;
+    line-height: 1.65em;
+    margin: 0.5em 0 1em 0;
+  }
+  
+  .team-row {
+    display: flex;
+    gap: 1.6em;
+    justify-content: center;
+    margin: 2em 0 1em 0;
+    flex-wrap: wrap;
+  }
+  
+  .team-card {
+    background: #eafaf1;
+    border-radius: 1.2em;
+    box-shadow: 0 8px 18px #44c79615;
+    flex: 1 1 130px;
+    max-width: 180px;
+    padding: 1.3em 1em 1em 1em;
+    text-align: center;
+    margin: 0.5em;
+    animation: fadeinup 1.2s cubic-bezier(.16,.65,.23,1.12) both;
+  }
+  
+  .team-card img {
+    width: 62px;
+    margin-bottom: 0.9em;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px #44c79622;
+    background: #f7f7f8;
+  }
+  
+  .team-card h3 {
+    margin: 0 0 0.32em 0;
+    color: var(--primary-dark);
+    font-size: 1.12em;
+    font-weight: 600;
+  }
+  
+  .team-role {
+    color: var(--accent);
+    font-size: 0.98em;
+    margin-bottom: 0.1em;
+    font-weight: 400;
+  }
+  
+  .about-footer-section {
+    margin: 2.5em 0 0 0;
+    text-align: center;
+  }
+  
+  .home-btn {
+    padding: 0.9em 2.3em;
+    font-size: 1.13em;
+    color: #fff;
+    background: var(--primary-dark);
+    border: none;
+    border-radius: 22px;
+    box-shadow: 0 4px 18px #44c79615;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+    font-weight: 600;
+  }
+  
+  .home-btn:hover {
+    background: var(--primary);
+    transform: translateY(-2px) scale(1.06);
+  }
+  
+  .about-footer {
+    background: var(--primary-dark);
+    color: #fff;
+    text-align: center;
+    padding: 1.1em 0 0.7em 0;
+    font-size: 1.1em;
+    border-radius: 18px 18px 0 0;
+    margin-top: 4vh;
+  }
+  
+  /* Responsive */
+  @media (max-width: 780px) {
+    .about-card { padding: 1.6em 0.6em; }
+    .team-row { flex-direction: column; gap: 1.3em;}
+  }
+  
